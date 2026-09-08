@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Department of Computer Science | Pondicherry University</title>
+  <meta name="description" content="Official Department & Student Portal for Department of Computer Science, Pondicherry University. Access academic records, attendance, timetables, and student details.">
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Remixicon Font -->
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- ==========================================
+       NAVIGATION BAR
+       ========================================== -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-container">
+        <a href="#home" class="brand" data-page="home">
+          <div class="brand-icon">
+            <i class="ri-terminal-box-line"></i>
+          </div>
+          <div class="brand-text">
+            <span class="brand-title">Pondicherry University</span>
+            <span class="brand-subtitle">Department of Computer Science</span>
+          </div>
+        </a>
+
+        <ul class="nav-links">
+          <li><a class="nav-link active" data-page="home" href="#home"><i class="ri-home-line"></i> Overview</a></li>
+          <li><a class="nav-link" data-page="login" href="#login"><i class="ri-user-line"></i> Student Portal</a></li>
+          <li><a class="nav-link" data-page="dashboard" href="#dashboard"><i class="ri-layout-grid-line"></i> Dashboard</a></li>
+        </ul>
+
+        <div class="user-status" id="nav-user-section">
+          <span id="nav-db-badge" class="badge badge-success" style="margin-right: 0.5rem;"><i class="ri-database-2-line"></i> MongoDB Connected</span>
+          <button class="btn btn-primary btn-sm" onclick="navigateTo('login')">
+            <i class="ri-user-3-line"></i> Student Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    <!-- ==========================================
+         1. HOMEPAGE VIEW
+         ========================================== -->
+    <section id="home-page" class="page-view active">
+      <!-- Hero Banner -->
+      <div class="hero-section">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <i class="ri-focus-2-line"></i> Pondicherry University • Department of Computer Science
+          </div>
+          <h1 class="hero-title">
+            Academic Excellence & <span class="highlight">Computational Science.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Welcome to the Department of Computer Science, Pondicherry University. Access your verified student records, semester grade histories, attendance logs, and class timetables through our unified student portal.
+          </p>
+          
+          <div class="hero-actions">
+            <button class="btn btn-primary" onclick="navigateTo('login')">
+              Access Student Portal <i class="ri-arrow-right-line"></i>
+            </button>
+            <button class="btn btn-secondary" onclick="navigateTo('dashboard')">
+              View Portal Preview
+            </button>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <h3>1,240+</h3>
+              <p>Enrolled Students</p>
+            </div>
+            <div class="stat-item">
+              <h3>98.4%</h3>
+              <p>Placement Rate</p>
+            </div>
+            <div class="stat-item">
+              <h3>45+</h3>
+              <p>Faculty Publications</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-card">
+            <img src="./images/hero.jpg" alt="Department Building Architecture">
+            <div class="hero-overlay-badge">
+              <div class="hero-badge-icon">
+                <i class="ri-building-4-line"></i>
+              </div>
+              <div>
+                <h4 style="font-size: 0.9rem; font-weight: 700;">Turing CS Block & Laboratories</h4>
+                <p style="font-size: 0.8rem; color: var(--text-muted);">Accredited Center for Computer Science</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Grid -->
+      <div class="section-header">
+        <h2>Department Information Portal</h2>
+        <p>Essential administrative & academic records for registered students.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ri-user-settings-line"></i>
+          </div>
+          <h3>Verified Student Profiles</h3>
+          <p>Complete academic record maintenance, contact details, emergency phone numbers, and academic advisor assignments.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ri-file-text-line"></i>
+          </div>
+          <h3>Grade & Credit Transcripts</h3>
+          <p>Instant breakdown of semester CGPA progression, credit hours earned, subject marks, and course completion badges.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ri-checkbox-circle-line"></i>
+          </div>
+          <h3>Attendance Monitoring</h3>
+          <p>Real-time session tracking by subject with immediate threshold warnings to maintain compliance above 75%.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon">
+            <i class="ri-time-line"></i>
+          </div>
+          <h3>Timetables & Schedules</h3>
+          <p>Weekly lecture and laboratory timetables with designated room locations, time slots, and instructor details.</p>
+        </div>
+      </div>
+
+      <!-- Announcement Banner -->
+      <div class="announcement-banner">
+        <div class="announcement-info">
+          <div class="announcement-icon">
+            <i class="ri-information-line"></i>
+          </div>
+          <div>
+            <h4 style="font-weight: 700; font-size: 0.95rem;">Mid-Term Examination Timetable Released</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Registered students must sign in to review hall tickets and room assignments.</p>
+          </div>
+        </div>
+        <button class="btn btn-secondary btn-sm" onclick="navigateTo('login')">
+          Log In <i class="ri-arrow-right-line"></i>
+        </button>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         2. LOGIN PAGE VIEW
+         ========================================== -->
+    <section id="login-page" class="page-view">
+      <div class="login-wrapper">
+        <div class="login-card">
+          <div class="login-header">
+            <div class="brand-icon" style="margin: 0 auto 1rem auto; width: 44px; height: 44px;">
+              <i class="ri-key-2-line"></i>
+            </div>
+            <h2>Student Portal Login</h2>
+            <p>Sign in with your institutional student credentials</p>
+          </div>
+
+          <!-- Quick Demo Select Helper -->
+          <div class="quick-demo-accounts">
+            <div class="quick-demo-title">
+              <i class="ri-cursor-line"></i> Demo Accounts (Click to Fill):
+            </div>
+            <div class="demo-chips">
+              <button type="button" class="demo-chip" onclick="fillDemoLogin('25MCA00PY0058')">
+                Shibasis Khamari (25MCA00PY0058)
+              </button>
+              <button type="button" class="demo-chip" onclick="fillDemoLogin('CS202402')">
+                Sophia Chen (CS202402)
+              </button>
+              <button type="button" class="demo-chip" onclick="fillDemoLogin('CS202403')">
+                Marcus Vance (CS202403)
+              </button>
+            </div>
+          </div>
+
+          <!-- Login Notification Alert -->
+          <div id="login-alert" class="login-alert"></div>
+
+          <!-- Login Form -->
+          <form id="login-form">
+            <div class="form-group">
+              <label class="form-label" for="roll-input">Roll Number / Student ID</label>
+              <div class="input-container">
+                <i class="ri-hashtag input-icon"></i>
+                <input type="text" id="roll-input" class="form-input" placeholder="e.g. CS202401" required autocomplete="username">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="pass-input">Password</label>
+              <div class="input-container">
+                <i class="ri-lock-line input-icon"></i>
+                <input type="password" id="pass-input" class="form-input" placeholder="Enter password" required autocomplete="current-password">
+                <button type="button" class="password-toggle" onclick="togglePasswordVisibility()">
+                  <i class="ri-eye-line" id="pass-toggle-icon"></i>
+                </button>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <label class="remember-me">
+                <input type="checkbox" checked style="accent-color: var(--bg-dark);"> Remember login
+              </label>
+              <a href="#" class="forgot-link" onclick="alert('Demo password is: student123')">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              Sign In to Portal <i class="ri-login-box-line"></i>
+            </button>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================
+         3. STUDENT DETAILS DASHBOARD VIEW
+         ========================================== -->
+    <section id="dashboard-page" class="page-view">
+      <!-- Switch Demo Student Toolbar -->
+      <div class="student-selector-bar">
+        <div style="display: flex; align-items: center; gap: 0.75rem; font-size: 0.85rem; color: var(--text-muted); flex-wrap: wrap;">
+          <i class="ri-user-switch-line"></i> Select Student:
+          <select id="switch-student-select" class="select-input" onchange="switchStudentProfile(this.value)">
+            <!-- Dynamic options loaded via JS -->
+          </select>
+        </div>
+        <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+          <button class="btn btn-primary btn-sm" onclick="openAddStudentModal()">
+            <i class="ri-user-add-line"></i> Add New Student (MongoDB)
+          </button>
+        </div>
+      </div>
+
+      <!-- Main Student Hero Header -->
+      <div class="glass-card dashboard-header student-hero-card">
+        <div class="student-profile-main">
+          <div class="avatar-wrapper">
+            <img id="dash-avatar" src="./images/shibu.jpg" alt="Student Profile" class="student-avatar">
+            <div class="status-indicator" title="Active Registered Student"></div>
+          </div>
+
+          <div class="student-meta">
+            <h1 id="dash-name">Alex Morgan</h1>
+            <p>Roll No: <strong id="dash-roll" style="color: var(--text-main);">CS202401</strong> • <span id="dash-dept">Computer Science & Engineering</span></p>
+            
+            <div class="meta-tags">
+              <span class="badge badge-black" id="dash-sem-badge">6th Semester • B.Tech</span>
+              <span class="badge badge-outline"><i class="ri-check-line"></i> Status: Good Academic Standing</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-header-actions">
+          <button class="btn btn-secondary btn-sm" onclick="openIdCardModal()">
+            <i class="ri-id-card-line"></i> Digital Student ID
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="openEditProfileModal()">
+            <i class="ri-edit-line"></i> Edit Profile
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="deleteCurrentStudent()" style="color: #dc2626; border-color: #fca5a5;">
+            <i class="ri-delete-bin-line"></i> Delete
+          </button>
+          <button class="btn btn-outline btn-sm" onclick="logoutUser()">
+            <i class="ri-logout-box-r-line"></i> Sign Out
+          </button>
+        </div>
+      </div>
+
+      <!-- Quick Performance Metrics -->
+      <div class="metrics-grid">
+        <div class="glass-card metric-card">
+          <div class="metric-icon">
+            <i class="ri-graduation-cap-line"></i>
+          </div>
+          <div>
+            <div class="metric-val" id="metric-cgpa">3.88 / 4.00</div>
+            <div class="metric-lbl">Cumulative GPA</div>
+          </div>
+        </div>
+
+        <div class="glass-card metric-card">
+          <div class="metric-icon">
+            <i class="ri-pie-chart-line"></i>
+          </div>
+          <div>
+            <div class="metric-val" id="metric-attendance">92%</div>
+            <div class="metric-lbl">Overall Attendance</div>
+          </div>
+        </div>
+
+        <div class="glass-card metric-card">
+          <div class="metric-icon">
+            <i class="ri-book-open-line"></i>
+          </div>
+          <div>
+            <div class="metric-val" id="metric-credits">112 Hrs</div>
+            <div class="metric-lbl">Completed Credits</div>
+          </div>
+        </div>
+
+        <div class="glass-card metric-card">
+          <div class="metric-icon">
+            <i class="ri-shield-check-line"></i>
+          </div>
+          <div>
+            <div class="metric-val" id="metric-fee">Cleared</div>
+            <div class="metric-lbl">Tuition Clearance</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Tabs for Dashboard Details -->
+      <div class="dash-tabs">
+        <button class="dash-tab-btn active" data-tab="profile">
+          <i class="ri-user-3-line"></i> Profile Details
+        </button>
+        <button class="dash-tab-btn" data-tab="grades">
+          <i class="ri-file-list-3-line"></i> Course Grades
+        </button>
+        <button class="dash-tab-btn" data-tab="attendance">
+          <i class="ri-calendar-check-line"></i> Attendance Record
+        </button>
+        <button class="dash-tab-btn" data-tab="timetable">
+          <i class="ri-time-line"></i> Class Schedule
+        </button>
+      </div>
+
+      <!-- TAB 1: PROFILE & PERSONAL DETAILS -->
+      <div id="profile-panel" class="tab-panel active">
+        <div class="info-grid">
+          <div class="glass-card detail-group-card">
+            <div class="card-title">
+              <i class="ri-information-line"></i> Personal & Institutional Info
+            </div>
+            <div class="info-list" id="profile-info-list">
+              <!-- Dynamically populated via JS -->
+            </div>
+          </div>
+
+          <div class="glass-card detail-group-card">
+            <div class="card-title">
+              <i class="ri-building-line"></i> Campus & Department Facilities
+            </div>
+            <div class="info-list">
+              <div class="info-item"><span class="info-label">Faculty Building</span><span class="info-value">Turing CS Block, Room 304</span></div>
+              <div class="info-item"><span class="info-label">Assigned Laboratory</span><span class="info-value">AI & Systems Lab 3</span></div>
+              <div class="info-item"><span class="info-label">Library Access ID</span><span class="info-value">LIB-2024-8849</span></div>
+              <div class="info-item"><span class="info-label">Institutional Wi-Fi</span><span class="info-value">AURA-CAMPUS-CS</span></div>
+              <div class="info-item"><span class="info-label">Hostel Residence</span><span class="info-value">Bhabha Residence Hall (214)</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 2: ACADEMIC GRADES -->
+      <div id="grades-panel" class="tab-panel">
+        <div class="glass-card" style="padding: 1.75rem;">
+          <div class="card-title" style="margin-bottom: 1.5rem; display: flex; justify-content: space-between; align-items: center;">
+            <div><i class="ri-file-text-line"></i> Current Semester Course Performance & Marks</div>
+            <button class="btn btn-secondary btn-sm" onclick="openAddCourseModal()">
+              <i class="ri-add-line"></i> Add Course Record
+            </button>
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Course Code</th>
+                  <th>Course Title</th>
+                  <th>Faculty Instructor</th>
+                  <th>Credits</th>
+                  <th>Grade</th>
+                  <th>Marks %</th>
+                </tr>
+              </thead>
+              <tbody id="courses-table-body">
+                <!-- Dynamically rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 3: ATTENDANCE DETAILS -->
+      <div id="attendance-panel" class="tab-panel">
+        <div class="glass-card" style="padding: 1.75rem;">
+          <div class="card-title" style="margin-bottom: 1.5rem;">
+            <i class="ri-calendar-event-line"></i> Subject Attendance Breakdown
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Subject Code & Title</th>
+                  <th>Sessions Attended</th>
+                  <th>Percentage</th>
+                  <th>Compliance Status</th>
+                </tr>
+              </thead>
+              <tbody id="attendance-table-body">
+                <!-- Dynamically rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- TAB 4: CLASS SCHEDULE / TIMETABLE -->
+      <div id="timetable-panel" class="tab-panel">
+        <div class="glass-card" style="padding: 1.75rem;">
+          <div class="card-title" style="margin-bottom: 1.5rem;">
+            <i class="ri-time-line"></i> Weekly Academic Schedule
+          </div>
+          <div class="table-responsive">
+            <table class="custom-table">
+              <thead>
+                <tr>
+                  <th>Time Slot</th>
+                  <th>Monday</th>
+                  <th>Tuesday</th>
+                  <th>Wednesday</th>
+                  <th>Thursday</th>
+                  <th>Friday</th>
+                </tr>
+              </thead>
+              <tbody id="timetable-table-body">
+                <!-- Dynamically rendered via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <!-- ==========================================
+       DIGITAL STUDENT ID CARD MODAL
+       ========================================== -->
+  <div id="id-card-modal-overlay" class="modal-overlay">
+    <div class="id-card-modal">
+      <button class="close-modal" onclick="closeIdCardModal()"><i class="ri-close-line"></i></button>
+      <div class="id-card-header">
+        <div style="font-size: 0.725rem; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text-muted); font-weight: 700;">Pondicherry University</div>
+        <div style="font-family: var(--font-code); font-size: 1.1rem; color: var(--text-main); font-weight: 700;">DEPARTMENT OF COMPUTER SCIENCE</div>
+      </div>
+      <img id="modal-id-avatar" src="" alt="Avatar" class="id-avatar">
+      <h3 id="modal-id-name" style="font-size: 1.25rem; font-weight: 700;">Student Name</h3>
+      <p id="modal-id-roll" style="color: var(--text-main); font-weight: 700; font-size: 0.9rem; margin-bottom: 0.25rem;">25MCA00PY0058</p>
+      <p id="modal-id-dept" style="font-size: 0.8rem; color: var(--text-muted); margin-bottom: 0.5rem;">Department of Computer Science</p>
+      <p id="modal-id-email" style="font-size: 0.78rem; color: var(--text-light);">student@pondiuni.ac.in</p>
+      <div class="id-barcode"></div>
+      <p style="font-size: 0.7rem; color: var(--text-muted); margin-top: 0.5rem;">Academic Year 2023 - 2027</p>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ADD NEW STUDENT MODAL (MONGODB API)
+       ========================================== -->
+  <div id="add-student-modal-overlay" class="modal-overlay">
+    <div class="modal-card" style="width: 100%; max-width: 520px; background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: var(--radius-md); padding: 2rem; position: relative;">
+      <button class="close-modal" onclick="closeAddStudentModal()"><i class="ri-close-line"></i></button>
+      <div class="card-title" style="margin-bottom: 1.25rem;">
+        <i class="ri-user-add-line"></i> Add New Student to MongoDB
+      </div>
+      <form id="add-student-form">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Roll Number *</label>
+            <input type="text" id="add-roll" class="form-input" placeholder="e.g. 25MCA00PY0099" required style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password *</label>
+            <input type="password" id="add-pass" class="form-input" value="student123" required style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Full Name *</label>
+          <input type="text" id="add-name" class="form-input" placeholder="e.g. Rahul Sharma" required style="padding-left: 1rem;">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Email *</label>
+            <input type="email" id="add-email" class="form-input" placeholder="student@pondiuni.ac.in" required style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="text" id="add-phone" class="form-input" placeholder="+91 9876543210" style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Department</label>
+            <input type="text" id="add-dept" class="form-input" value="Computer Science" style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Degree & Semester</label>
+            <input type="text" id="add-degree" class="form-input" value="MCA • 3rd Semester" style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">CGPA</label>
+            <input type="text" id="add-cgpa" class="form-input" value="8.50 / 10.00" style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Attendance %</label>
+            <input type="number" id="add-attendance" class="form-input" value="88" min="0" max="100" style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline" onclick="closeAddStudentModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary"><i class="ri-save-line"></i> Save to MongoDB</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       EDIT STUDENT PROFILE MODAL (MONGODB API)
+       ========================================== -->
+  <div id="edit-profile-modal-overlay" class="modal-overlay">
+    <div class="modal-card" style="width: 100%; max-width: 520px; background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: var(--radius-md); padding: 2rem; position: relative;">
+      <button class="close-modal" onclick="closeEditProfileModal()"><i class="ri-close-line"></i></button>
+      <div class="card-title" style="margin-bottom: 1.25rem;">
+        <i class="ri-edit-line"></i> Update Profile Details in MongoDB
+      </div>
+      <form id="edit-profile-form">
+        <div class="form-group">
+          <label class="form-label">Full Name</label>
+          <input type="text" id="edit-name" class="form-input" required style="padding-left: 1rem;">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" id="edit-email" class="form-input" required style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="text" id="edit-phone" class="form-input" style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">CGPA Display</label>
+            <input type="text" id="edit-cgpa" class="form-input" style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Attendance %</label>
+            <input type="number" id="edit-attendance" class="form-input" min="0" max="100" style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Academic Advisor</label>
+          <input type="text" id="edit-advisor" class="form-input" style="padding-left: 1rem;">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Emergency Contact</label>
+          <input type="text" id="edit-emergency" class="form-input" style="padding-left: 1rem;">
+        </div>
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline" onclick="closeEditProfileModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary"><i class="ri-refresh-line"></i> Update MongoDB</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================
+       ADD COURSE RECORD MODAL (MONGODB API)
+       ========================================== -->
+  <div id="add-course-modal-overlay" class="modal-overlay">
+    <div class="modal-card" style="width: 100%; max-width: 460px; background: var(--bg-card); border: 1px solid var(--border-dark); border-radius: var(--radius-md); padding: 2rem; position: relative;">
+      <button class="close-modal" onclick="closeAddCourseModal()"><i class="ri-close-line"></i></button>
+      <div class="card-title" style="margin-bottom: 1.25rem;">
+        <i class="ri-book-add-line"></i> Add Course Grade to MongoDB
+      </div>
+      <form id="add-course-form">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Course Code *</label>
+            <input type="text" id="course-code" class="form-input" placeholder="e.g. CS314" required style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Credits *</label>
+            <input type="number" id="course-credits" class="form-input" value="4" min="1" max="10" required style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Course Title *</label>
+          <input type="text" id="course-title" class="form-input" placeholder="e.g. Cloud Computing Systems" required style="padding-left: 1rem;">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Instructor</label>
+          <input type="text" id="course-instructor" class="form-input" placeholder="e.g. Dr. Robert Vance" style="padding-left: 1rem;">
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <div class="form-group">
+            <label class="form-label">Grade</label>
+            <input type="text" id="course-grade" class="form-input" value="A+" style="padding-left: 1rem;">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Marks %</label>
+            <input type="number" id="course-marks" class="form-input" value="92" min="0" max="100" style="padding-left: 1rem;">
+          </div>
+        </div>
+        <div style="display: flex; gap: 0.75rem; justify-content: flex-end; margin-top: 1.5rem;">
+          <button type="button" class="btn btn-outline" onclick="closeAddCourseModal()">Cancel</button>
+          <button type="submit" class="btn btn-primary"><i class="ri-save-line"></i> Save Course</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div>
+          <strong>Pondicherry University</strong> — Department of Computer Science
+        </div>
+        <div>
+          &copy; 2026 Department Information System
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
